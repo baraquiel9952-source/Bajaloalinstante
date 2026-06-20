@@ -1,0 +1,1281 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bajaloya - Constancia de Situación Fiscal (CSF) en Minutos</title>
+    <meta name="description" content="Obtén tu CSF del SAT en minutos. Trámite rápido, seguro y 100% oficial. Desde $60 MXN.">
+    <meta name="theme-color" content="#0d233a">
+    <!-- Open Graph / WhatsApp / Facebook preview -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Bajaloya — Constancia de Situación Fiscal en Minutos">
+    <meta property="og:description" content="Obtén tu CSF del SAT en minutos. Trámite rápido, seguro y 100% oficial. Desde $60 MXN.">
+    <meta property="og:image" content="https://bajaloya.com/og-preview.png">
+    <meta property="og:locale" content="es_MX">
+    <style>
+        :root {
+            --bg-color: #0d233a;
+            --primary-yellow: #f5b900;
+            --secondary-yellow: #ffd000;
+            --text-white: #ffffff;
+            --text-muted: #a0aec0;
+            --card-bg: #ffffff;
+            --card-text: #333333;
+            --success-green: #2ecc71;
+            --accent-blue: #3498db;
+            --danger-red: #e74c3c;
+            --border-gray: #cbd5e1;
+            --whatsapp-green: #25D366;
+            --urgency-orange: #e67e22;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-white);
+            overflow-x: hidden;
+        }
+
+        /* --- Urgency Bar --- */
+        .urgency-bar {
+            background: linear-gradient(90deg, var(--danger-red), var(--urgency-orange));
+            text-align: center;
+            padding: 10px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.85; }
+        }
+
+        /* --- Social Proof Toast --- */
+        .social-toast {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: white;
+            color: #333;
+            padding: 12px 18px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.85rem;
+            max-width: 320px;
+            transform: translateY(150px);
+            transition: transform 0.5s ease;
+            border-left: 4px solid var(--success-green);
+            /* Evita solaparse con barras del sistema en móvil */
+            bottom: calc(20px + env(safe-area-inset-bottom));
+        }
+
+        .social-toast.show {
+            transform: translateY(0);
+        }
+
+        .social-toast-icon {
+            font-size: 1.5rem;
+        }
+
+        .social-toast-text {
+            line-height: 1.4;
+        }
+
+        .social-toast-name {
+            font-weight: 700;
+            color: var(--accent-blue);
+        }
+
+        .social-toast-time {
+            font-size: 0.75rem;
+            color: #94a3b8;
+        }
+
+        /* --- Navbar --- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 8%;
+            background-color: rgba(13, 35, 58, 0.98);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 900;
+            font-style: italic;
+            color: var(--primary-yellow);
+            text-shadow: 2px 2px 0px #000;
+        }
+
+        .logo p {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: -5px;
+        }
+
+        nav a {
+            color: var(--text-white);
+            text-decoration: none;
+            margin-right: 25px;
+            font-weight: 600;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+
+        nav a:hover {
+            color: var(--primary-yellow);
+        }
+
+        .btn-header {
+            background-color: var(--primary-yellow);
+            color: #000;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        @media (min-width: 901px) {
+            .btn-header {
+                animation: bounce 2s infinite;
+            }
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-3px); }
+        }
+
+        .btn-header:hover {
+            background-color: var(--secondary-yellow);
+            transform: scale(1.05);
+        }
+
+        /* --- Main Content / Hero --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .hero-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        .visual-column {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Social Proof Box */
+        .social-proof {
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+            padding: 20px;
+            width: 100%;
+            max-width: 400px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .social-proof-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .stars {
+            color: var(--primary-yellow);
+            font-size: 1.2rem;
+        }
+
+        .social-proof-title {
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .testimonial {
+            font-size: 0.9rem;
+            color: #cbd5e1;
+            line-height: 1.5;
+            font-style: italic;
+            border-left: 3px solid var(--primary-yellow);
+            padding-left: 12px;
+            margin-bottom: 10px;
+        }
+
+        .testimonial-author {
+            font-size: 0.8rem;
+            color: var(--primary-yellow);
+            font-weight: 600;
+        }
+
+        .stats-row {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--primary-yellow);
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        /* Live Counter */
+        .live-counter {
+            background: rgba(46, 204, 113, 0.1);
+            border: 1px solid rgba(46, 204, 113, 0.3);
+            border-radius: 8px;
+            padding: 10px 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 20px;
+            font-size: 0.85rem;
+            color: #2ecc71;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .live-dot {
+            width: 8px;
+            height: 8px;
+            background: #2ecc71;
+            border-radius: 50%;
+            animation: blink 1.5s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        .live-counter strong {
+            color: var(--primary-yellow);
+        }
+
+        .benefits-list {
+            width: 100%;
+            max-width: 400px;
+            margin-top: 10px;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            background: rgba(255,255,255,0.05);
+            padding: 12px 15px;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+
+        .benefit-item:hover {
+            transform: translateX(5px);
+            background: rgba(255,255,255,0.08);
+        }
+
+        .benefit-icon {
+            font-size: 1.6rem;
+            margin-right: 15px;
+            min-width: 40px;
+            text-align: center;
+        }
+
+        .benefit-text h4 {
+            font-weight: bold;
+            font-size: 1rem;
+        }
+        .benefit-text p {
+            font-size: 0.85rem;
+            color: #cbd5e1;
+        }
+
+        /* Column Right: Offer & Form */
+        .offer-column {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .main-title {
+            font-size: 2rem;
+            text-transform: uppercase;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 5px;
+        }
+
+        .main-title span {
+            color: var(--primary-yellow);
+            display: block;
+            font-size: 2.8rem;
+        }
+
+        .subtitle {
+            margin: 15px 0 20px 0;
+            font-size: 1.1rem;
+            color: #cbd5e1;
+            line-height: 1.5;
+        }
+
+        /* Price Box */
+        .price-box {
+            background: rgba(245, 185, 0, 0.1);
+            border: 2px solid var(--primary-yellow);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 25px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .price-box::before {
+            content: "💰";
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 1.5rem;
+            opacity: 0.3;
+        }
+
+        .price-label {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .price-amount {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--primary-yellow);
+            line-height: 1;
+            margin: 10px 0;
+        }
+
+        .price-amount span {
+            font-size: 1.2rem;
+            color: var(--text-white);
+            font-weight: normal;
+        }
+
+        .price-box.precio-alto {
+            border-color: var(--danger-red);
+            background: rgba(231, 76, 60, 0.1);
+        }
+
+        .price-box.precio-alto .price-amount {
+            color: var(--danger-red);
+        }
+
+        .price-save {
+            background: var(--success-green);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-top: 5px;
+        }
+
+        /* --- Checkout Form --- */
+        .checkout-card {
+            background-color: var(--card-bg);
+            color: var(--card-text);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .form-header h3 {
+            font-size: 1.3rem;
+            color: var(--card-text);
+            margin-bottom: 5px;
+        }
+
+        .form-header p {
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+
+        .form-step {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .form-step label {
+            display: block;
+            font-weight: 700;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+            color: #1a1a1a;
+        }
+
+        .form-step label span {
+            background: var(--primary-yellow);
+            color: #000;
+            padding: 3px 10px;
+            border-radius: 50%;
+            margin-right: 8px;
+            font-size: 0.85rem;
+            font-weight: 900;
+        }
+
+        .form-step input[type="text"] {
+            width: 100%;
+            padding: 14px;
+            border: 2px solid var(--border-gray);
+            border-radius: 8px;
+            font-size: 1.05rem;
+            outline: none;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            background: #f8fafc;
+        }
+
+        .form-step input[type="text"]:focus {
+            border-color: var(--accent-blue);
+            background: white;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+        }
+
+        .form-step input[type="text"]::placeholder {
+            text-transform: none;
+            color: #94a3b8;
+        }
+
+        .form-step.valid input {
+            border-color: var(--success-green) !important;
+            background-color: #f0fdf4;
+        }
+
+        .form-step.invalid input {
+            border-color: var(--danger-red) !important;
+            background-color: #fef2f2;
+        }
+
+        .error-message {
+            color: var(--danger-red);
+            font-size: 0.85rem;
+            margin-top: 6px;
+            display: none;
+            font-weight: 600;
+            padding-left: 5px;
+        }
+
+        /* Toggle switches */
+        .toggle-group {
+            display: flex;
+            gap: 12px;
+            margin-top: 8px;
+        }
+
+        .toggle-btn {
+            flex: 1;
+            padding: 14px 20px;
+            border: 2px solid var(--border-gray);
+            background: #f8fafc;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.3s;
+            text-align: center;
+            color: #64748b;
+        }
+
+        .toggle-btn:hover {
+            border-color: var(--accent-blue);
+            color: var(--accent-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .toggle-btn.active-si {
+            background: var(--success-green);
+            color: white;
+            border-color: var(--success-green);
+            box-shadow: 0 4px 15px rgba(46, 204, 113, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .toggle-btn.active-no {
+            background: var(--danger-red);
+            color: white;
+            border-color: var(--danger-red);
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .hidden-field {
+            display: none;
+            opacity: 0;
+            transition: all 0.4s ease;
+        }
+
+        .hidden-field.show {
+            display: block;
+            opacity: 1;
+            animation: slideDown 0.4s ease;
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .precio-nota {
+            background: rgba(231, 76, 60, 0.08);
+            border: 1px solid rgba(231, 76, 60, 0.2);
+            border-radius: 8px;
+            padding: 12px 15px;
+            margin-bottom: 15px;
+            font-size: 0.85rem;
+            color: #c0392b;
+            display: none;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .precio-nota.show {
+            display: flex;
+        }
+
+        .precio-nota .icon {
+            font-size: 1.2rem;
+        }
+
+        /* Botón de WhatsApp */
+        .btn-whatsapp {
+            width: 100%;
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: #ffffff;
+            border: none;
+            padding: 18px;
+            font-size: 1.2rem;
+            font-weight: 800;
+            border-radius: 10px;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-whatsapp::after {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: rgba(255,255,255,0.1);
+            transform: rotate(45deg);
+            transition: all 0.5s;
+        }
+
+        .btn-whatsapp:hover:not(:disabled) {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.5);
+        }
+
+        .btn-whatsapp:hover:not(:disabled)::after {
+            left: 100%;
+        }
+
+        .btn-whatsapp:disabled {
+            background: #cbd5e1;
+            color: #94a3b8;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .whatsapp-icon {
+            font-size: 1.5rem;
+        }
+
+        .spinner {
+            width: 20px;
+            height: 20px;
+            border: 3px solid #fff;
+            border-top: 3px solid transparent;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            display: none;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .garantia-text {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 0.85rem;
+            color: #64748b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        .garantia-text .icon {
+            color: var(--success-green);
+            font-size: 1rem;
+        }
+
+        /* --- Trust Badges --- */
+        .trust-badges {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            text-align: center;
+            margin: 50px 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 40px;
+        }
+
+        .badge-item .icon {
+            font-size: 2.2rem;
+            color: var(--primary-yellow);
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .badge-item p {
+            font-weight: bold;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* --- FAQ Section --- */
+        .faq-section {
+            margin-top: 50px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 40px;
+        }
+
+        .faq-section h2 {
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: var(--primary-yellow);
+        }
+
+        .faq-item {
+            background: rgba(255,255,255,0.03);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 15px;
+            border: 1px solid rgba(255,255,255,0.05);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .faq-item:hover {
+            background: rgba(255,255,255,0.06);
+            border-color: rgba(245, 185, 0, 0.3);
+        }
+
+        .faq-question {
+            font-weight: 700;
+            font-size: 1.05rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            margin-top: 10px;
+            font-size: 0.95rem;
+            color: #cbd5e1;
+            line-height: 1.6;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-toggle {
+            font-size: 1.2rem;
+            color: var(--primary-yellow);
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 900px) {
+            .hero-section { grid-template-columns: 1fr; }
+            .trust-badges { grid-template-columns: repeat(2, 1fr); }
+            header { flex-direction: row; flex-wrap: wrap; gap: 10px; padding: 12px 5%; justify-content: space-between; }
+            header nav { display: none; }
+            .main-title { font-size: 1.6rem; }
+            .main-title span { font-size: 2.2rem; }
+            .price-amount { font-size: 2.5rem; }
+            .social-toast {
+                left: 10px;
+                right: 10px;
+                max-width: none;
+                bottom: calc(10px + env(safe-area-inset-bottom));
+            }
+        }
+
+        @media (max-width: 500px) {
+            .toggle-group { flex-direction: column; }
+            .toggle-btn { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Social Proof Toast -->
+    <div class="social-toast" id="socialToast" role="status" aria-live="polite" aria-atomic="true">
+        <span class="social-toast-icon" id="toastIcon">🛒</span>
+        <div class="social-toast-text">
+            <div><span class="social-toast-name" id="toastName">María G.</span> de <span id="toastCity">CDMX</span></div>
+            <div id="toastAction">acaba de solicitar su CSF</div>
+            <div class="social-toast-time" id="toastTime">Hace 2 minutos</div>
+        </div>
+    </div>
+
+    <!-- Barra de urgencia -->
+    <div class="urgency-bar">
+        🔥 PROMOCIÓN ESPECIAL: Precios válidos solo esta semana | Entrega en 5-15 minutos
+    </div>
+
+    <header>
+        <div class="logo">
+            <h1>Bajaloya</h1>
+            <p>Trámites SAT en minutos</p>
+        </div>
+        <nav>
+            <a href="#solicitar">Inicio</a>
+            <a href="#solicitar">Trámite</a>
+            <a href="#faq">FAQ</a>
+        </nav>
+        <a href="#solicitar" class="btn-header">SOLICITAR AHORA</a>
+    </header>
+
+    <main class="container">
+        <section class="hero-section">
+
+            <div class="visual-column">
+                <!-- Live Counter -->
+                <div class="live-counter">
+                    <span class="live-dot" aria-hidden="true"></span>
+                    <span>Más de <strong id="liveCount">2,500</strong> constancias entregadas este mes</span>
+                </div>
+
+                <!-- Social Proof -->
+                <div class="social-proof">
+                    <div class="social-proof-header">
+                        <span class="stars" aria-label="5 estrellas">⭐⭐⭐⭐⭐</span>
+                        <span class="social-proof-title">+2,500 clientes satisfechos</span>
+                    </div>
+                    <div class="testimonial">
+                        "Me resolvieron en 10 minutos lo que el SAT no me dejaba hacer en días. ¡100% recomendado!"
+                    </div>
+                    <div class="testimonial-author">— María G., CDMX</div>
+
+                    <div class="stats-row">
+                        <div class="stat-item">
+                            <div class="stat-number">15 min</div>
+                            <div class="stat-label">Tiempo promedio</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">Oficial SAT</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">4.9★</div>
+                            <div class="stat-label">Calificación</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="benefits-list">
+                    <div class="benefit-item">
+                        <div class="benefit-icon" style="color: var(--secondary-yellow);">⚡</div>
+                        <div class="benefit-text">
+                            <h4>ENTREGA EN MINUTOS</h4>
+                            <p>Recibe tu CSF lista para usar en menos de 15 minutos.</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon" style="color: var(--accent-blue);">🛡️</div>
+                        <div class="benefit-text">
+                            <h4>100% OFICIAL Y VÁLIDO</h4>
+                            <p>Documento emitido directamente por el SAT. Sin riesgos.</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon" style="color: var(--success-green);">💰</div>
+                        <div class="benefit-text">
+                            <h4>MEJOR PRECIO GARANTIZADO</h4>
+                            <p>Desde $60 MXN. Sin costos ocultos ni sorpresas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="offer-column" id="solicitar">
+                <h2 class="main-title">
+                    Obtén tu
+                    <span>Constancia de Situación Fiscal</span>
+                </h2>
+                <p class="subtitle">Documento oficial del SAT para trámites de nómina, facturación, créditos y más. Rápido, seguro y sin filas.</p>
+
+                <div class="price-box" id="priceBox">
+                    <div class="price-label">Precio del servicio</div>
+                    <div class="price-amount" id="priceAmount">$60 <span>MXN</span></div>
+                    <div class="price-save" id="priceSave" style="display: none;">Solo con CURP</div>
+                </div>
+
+                <div class="checkout-card">
+                    <div class="form-header">
+                        <h3>📋 Completa tu solicitud</h3>
+                        <p>Te contactamos por WhatsApp en segundos</p>
+                    </div>
+
+                    <form id="csfForm" onsubmit="handleFormSubmit(event)">
+
+                        <div class="form-step" id="preguntaRFC">
+                            <label id="labelRFC"><span>1</span> ¿Ya tienes RFC e ID CIF del SAT?</label>
+                            <div class="toggle-group" role="group" aria-labelledby="labelRFC">
+                                <button type="button" class="toggle-btn" id="btnSi" onclick="seleccionarOpcion('si')" aria-pressed="false">
+                                    ✅ Sí, ya tengo
+                                </button>
+                                <button type="button" class="toggle-btn" id="btnNo" onclick="seleccionarOpcion('no')" aria-pressed="false">
+                                    ❌ No tengo RFC
+                                </button>
+                            </div>
+                            <input type="hidden" id="tieneRFC" required>
+                            <div class="error-message" id="preguntaError" role="alert">Por favor selecciona una opción para continuar.</div>
+                        </div>
+
+                        <div class="form-step hidden-field" id="rfcCifContainer">
+                            <label for="rfcCifInput"><span>2</span> Ingresa tu RFC e ID CIF:</label>
+                            <input type="text" id="rfcCifInput" name="rfcCif" placeholder="Ej: PEMA900101A23 ABC123456" maxlength="50" autocomplete="off" inputmode="text" spellcheck="false" aria-describedby="rfcCifError">
+                            <div class="error-message" id="rfcCifError" role="alert">Ingresa tu RFC e ID CIF correctamente.</div>
+                        </div>
+
+                        <div class="form-step hidden-field" id="curpContainer">
+                            <label for="curpInput"><span>2</span> Ingresa tu CURP:</label>
+                            <input type="text" id="curpInput" name="curp" placeholder="Ej: PEMA900101HDFXXR01" maxlength="18" autocomplete="off" inputmode="text" spellcheck="false" aria-describedby="curpError">
+                            <div class="error-message" id="curpError" role="alert">La CURP debe tener exactamente 18 caracteres alfanuméricos.</div>
+                        </div>
+
+                        <div class="precio-nota" id="precioNota">
+                            <span class="icon">ℹ️</span>
+                            <span><strong>Trámite solo con CURP:</strong> Podemos tramitar tu CSF usando únicamente tu CURP, sin necesidad de RFC ni ID CIF.</span>
+                        </div>
+
+                        <button type="submit" class="btn-whatsapp" id="submitBtn">
+                            <div class="spinner" id="btnSpinner"></div>
+                            <span class="whatsapp-icon" id="btnIcon">💬</span>
+                            <span id="btnText">ENVIAR POR WHATSAPP</span>
+                        </button>
+
+                        <div class="garantia-text">
+                            <span class="icon">🔒</span>
+                            <span>Pago seguro · Garantía de entrega · Soporte 24/7</span>
+                        </div>
+                        <div class="garantia-text" style="margin-top:8px; font-size:0.78rem; color:#94a3b8;">
+                            <span>🛡️</span>
+                            <span>Tus datos se usan únicamente para tramitar tu CSF y no se almacenan.</span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="trust-badges">
+            <div class="badge-item"><span class="icon">⚡</span><p>Entrega Rápida</p></div>
+            <div class="badge-item"><span class="icon">🛡️</span><p>100% Oficial SAT</p></div>
+            <div class="badge-item"><span class="icon">👤</span><p>Atención Personal</p></div>
+            <div class="badge-item"><span class="icon">✓</span><p>Garantía de Entrega</p></div>
+        </section>
+
+        <section class="faq-section" id="faq">
+            <h2>❓ Preguntas Frecuentes</h2>
+
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">
+                    ¿Cuánto tiempo tarda en llegar mi CSF?
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Una vez confirmado el pago, tu Constancia de Situación Fiscal está lista en <strong>5 a 15 minutos</strong>. Te enviamos el documento en PDF por WhatsApp.
+                </div>
+            </div>
+
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">
+                    ¿El documento es oficial del SAT?
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Sí, 100% oficial. La CSF se descarga directamente del portal del SAT con tu firma electrónica. Es válida para cualquier trámite: nómina, facturación, créditos, etc.
+                </div>
+            </div>
+
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">
+                    ¿Qué pago aceptan?
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Aceptamos transferencia bancaria, depósito en Oxxo, SPEI y otros métodos. Te enviamos los datos de pago por WhatsApp una vez recibida tu solicitud.
+                </div>
+            </div>
+
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">
+                    ¿Qué necesito si no tengo RFC?
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Solo necesitas tu <strong>CURP</strong>. Con ese dato podemos tramitar tu Constancia de Situación Fiscal directamente. El costo es de $90 MXN.
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer style="background:rgba(0,0,0,0.3); border-top:1px solid rgba(255,255,255,0.07); padding:25px 8%; margin-top:50px; display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:15px; font-size:0.8rem; color:#64748b;">
+        <div>
+            <strong style="color:#a0aec0;">Bajaloya</strong> · Trámites SAT en minutos<br>
+            Contacto: <a href="https://wa.me/525647385519" style="color:var(--primary-yellow); text-decoration:none;">WhatsApp 5647385519</a>
+        </div>
+        <div style="text-align:right;">
+            Tus datos son confidenciales y se usan exclusivamente para tu trámite.<br>
+            No somos el SAT. Somos un servicio de gestión independiente.
+        </div>
+    </footer>
+
+    <script>
+        // CONFIGURACIÓN: Número de WhatsApp destino
+        // FORMATO: Código país + número sin espacios ni +
+        // Ejemplo México: 5215512345678
+        // ============================================
+        const WHATSAPP_NUMBER = "525647385519"; // ← número destino
+
+        const rfcCifInput = document.getElementById('rfcCifInput');
+        const curpInput = document.getElementById('curpInput');
+        const submitBtn = document.getElementById('submitBtn');
+        const btnSpinner = document.getElementById('btnSpinner');
+        const btnIcon = document.getElementById('btnIcon');
+        const btnText = document.getElementById('btnText');
+        const tieneRFC = document.getElementById('tieneRFC');
+        const rfcCifContainer = document.getElementById('rfcCifContainer');
+        const curpContainer = document.getElementById('curpContainer');
+        const btnSi = document.getElementById('btnSi');
+        const btnNo = document.getElementById('btnNo');
+        const priceBox = document.getElementById('priceBox');
+        const priceAmount = document.getElementById('priceAmount');
+        const priceSave = document.getElementById('priceSave');
+        const precioNota = document.getElementById('precioNota');
+
+        const PRECIO_NORMAL = 60;
+        const PRECIO_ALTA = 90;
+
+        const rfcRegex = /^([A-ZÑ&]{3,4}) ?(\d{2}(0[1-9]|1[0-2])(0[1-9]|[12]\d|3[01])) ?([A-Z\d]{3})?$/i;
+        const curpRegex = /^[A-Z][AEIOUX][A-Z]{2}\d{2}(0[1-9]|1[0-2])(0[1-9]|[12]\d|3[01])[HM](AS|BC|BS|CC|CS|CH|CL|CM|DF|DG|GT|GR|HG|JC|MC|MN|MS|NT|NL|OC|PL|QT|QR|SP|SL|SR|TC|TS|TL|VZ|YN|ZS|NE)[B-DF-HJ-NP-TV-Z]{3}[A-Z\d]\d$/i;
+
+        let opcionSeleccionada = null;
+
+        // ============================================
+        // FALSO SOCIAL PROOF - TOAST NOTIFICATIONS
+        // ============================================
+        const nombres = ['María G.', 'Juan P.', 'Ana L.', 'Carlos R.', 'Diana M.', 'Luis H.', 'Sofía T.', 'Pedro N.', 'Laura V.', 'Miguel A.'];
+        const ciudades = ['CDMX', 'Guadalajara', 'Monterrey', 'Puebla', 'Tijuana', 'León', 'Querétaro', 'Mérida', 'Cancún', 'Toluca'];
+        const acciones = [
+            'acaba de solicitar su CSF',
+            'completó su trámite exitosamente',
+            'recibió su CSF en 8 minutos',
+            'dejó una reseña de 5 estrellas',
+            'recomendó Bajaloya a un amigo',
+            'acaba de realizar su pago'
+        ];
+        const iconos = ['🛒', '✅', '📄', '⭐', '💬', '💰', '📝'];
+
+        function mostrarToast() {
+            const toast = document.getElementById('socialToast');
+            const nombre = nombres[Math.floor(Math.random() * nombres.length)];
+            const ciudad = ciudades[Math.floor(Math.random() * ciudades.length)];
+            const accion = acciones[Math.floor(Math.random() * acciones.length)];
+            const icono = iconos[Math.floor(Math.random() * iconos.length)];
+            const tiempo = Math.floor(Math.random() * 10) + 1;
+
+            document.getElementById('toastName').textContent = nombre;
+            document.getElementById('toastCity').textContent = ciudad;
+            document.getElementById('toastAction').textContent = accion;
+            document.getElementById('toastTime').textContent = `Hace ${tiempo} minuto${tiempo > 1 ? 's' : ''}`;
+            document.getElementById('toastIcon').textContent = icono;
+
+            toast.classList.add('show');
+
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 5000);
+        }
+
+        // Mostrar primer toast después de 5 segundos, luego cada 15-25 segundos
+        setTimeout(mostrarToast, 5000);
+        setInterval(() => {
+            const delay = Math.floor(Math.random() * 10000) + 15000;
+            setTimeout(mostrarToast, delay);
+        }, 25000);
+
+        // ============================================
+        // CONTADOR DE CONSTANCIAS ENTREGADAS (estático, creíble)
+        // ============================================
+        // Muestra un número acumulado que crece lentamente desde una base realista
+        (function() {
+            const BASE = 2500;
+            const el = document.getElementById('liveCount');
+            if (el) el.textContent = BASE;
+        })();
+
+        // ============================================
+        // FUNCIÓN: Seleccionar Sí o No
+        // ============================================
+        function seleccionarOpcion(opcion) {
+            opcionSeleccionada = opcion;
+            tieneRFC.value = opcion;
+
+            btnSi.classList.remove('active-si');
+            btnNo.classList.remove('active-no');
+            btnSi.setAttribute('aria-pressed', 'false');
+            btnNo.setAttribute('aria-pressed', 'false');
+
+            if (opcion === 'si') {
+                btnSi.classList.add('active-si');
+                btnSi.setAttribute('aria-pressed', 'true');
+                rfcCifContainer.classList.add('show');
+                curpContainer.classList.remove('show');
+                rfcCifInput.required = true;
+                curpInput.required = false;
+                curpInput.value = '';
+                document.getElementById('curpContainer').classList.remove('valid', 'invalid');
+
+                priceAmount.innerHTML = `$${PRECIO_NORMAL} <span>MXN</span>`;
+                priceBox.classList.remove('precio-alto');
+                priceSave.style.display = 'none';
+                precioNota.classList.remove('show');
+
+            } else {
+                btnNo.classList.add('active-no');
+                btnNo.setAttribute('aria-pressed', 'true');
+                curpContainer.classList.add('show');
+                rfcCifContainer.classList.remove('show');
+                curpInput.required = true;
+                rfcCifInput.required = false;
+                rfcCifInput.value = '';
+                document.getElementById('rfcCifContainer').classList.remove('valid', 'invalid');
+
+                priceAmount.innerHTML = `$${PRECIO_ALTA} <span>MXN</span>`;
+                priceBox.classList.add('precio-alto');
+                priceSave.style.display = 'inline-block';
+                precioNota.classList.add('show');
+            }
+
+            document.getElementById('preguntaError').style.display = 'none';
+        }
+
+        // Validación en tiempo real
+        let rfcTimeout, curpTimeout;
+
+        function validateRFC() {
+            rfcCifInput.value = rfcCifInput.value.toUpperCase();
+            const container = document.getElementById('rfcCifContainer');
+            const error = document.getElementById('rfcCifError');
+            const rfcPart = rfcCifInput.value.split(' ')[0];
+
+            if(rfcCifInput.value === "" || rfcRegex.test(rfcPart)) {
+                container.classList.remove('invalid');
+                if(rfcCifInput.value !== "") container.classList.add('valid');
+                error.style.display = 'none';
+            } else {
+                container.classList.remove('valid');
+                container.classList.add('invalid');
+                error.style.display = 'block';
+            }
+        }
+
+        function validateCURP() {
+            curpInput.value = curpInput.value.toUpperCase();
+            const container = document.getElementById('curpContainer');
+            const error = document.getElementById('curpError');
+
+            if(curpInput.value === "" || curpRegex.test(curpInput.value)) {
+                container.classList.remove('invalid');
+                if(curpInput.value !== "") container.classList.add('valid');
+                error.style.display = 'none';
+            } else {
+                container.classList.remove('valid');
+                container.classList.add('invalid');
+                error.style.display = 'block';
+            }
+        }
+
+        rfcCifInput.addEventListener('input', () => {
+            clearTimeout(rfcTimeout);
+            rfcTimeout = setTimeout(validateRFC, 300);
+        });
+
+        curpInput.addEventListener('input', () => {
+            clearTimeout(curpTimeout);
+            curpTimeout = setTimeout(validateCURP, 300);
+        });
+
+        function toggleFaq(element) {
+            element.classList.toggle('active');
+        }
+
+        // ============================================
+        // ENVÍO POR WHATSAPP
+        // ============================================
+        function handleFormSubmit(event) {
+            event.preventDefault();
+
+            if (!opcionSeleccionada) {
+                document.getElementById('preguntaError').style.display = 'block';
+                document.getElementById('preguntaRFC').scrollIntoView({ behavior: 'smooth' });
+                return;
+            }
+
+            let precioActual = PRECIO_NORMAL;
+
+            if (opcionSeleccionada === 'si') {
+                const rfcPart = rfcCifInput.value.split(' ')[0];
+                if (!rfcRegex.test(rfcPart) || rfcCifInput.value.trim() === '') {
+                    document.getElementById('rfcCifContainer').classList.add('invalid');
+                    document.getElementById('rfcCifError').style.display = 'block';
+                    rfcCifInput.focus();
+                    return;
+                }
+            } else {
+                precioActual = PRECIO_ALTA;
+                if (!curpRegex.test(curpInput.value)) {
+                    document.getElementById('curpContainer').classList.add('invalid');
+                    document.getElementById('curpError').style.display = 'block';
+                    curpInput.focus();
+                    return;
+                }
+            }
+
+            submitBtn.disabled = true;
+            btnSpinner.style.display = 'block';
+            btnIcon.style.display = 'none';
+            btnText.innerText = 'ABRIENDO WHATSAPP...';
+
+            const fecha = new Date().toLocaleString('es-MX', {
+                day: '2-digit',
+                month: '2-digit',
+                year: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            });
+
+            let datosCliente = '';
+            let tipoTramite = '';
+            if (opcionSeleccionada === 'si') {
+                datosCliente = `• RFC e ID CIF: *${rfcCifInput.value}*`;
+                tipoTramite = 'Con RFC e ID CIF';
+            } else {
+                datosCliente = `• CURP: *${curpInput.value}*`;
+                tipoTramite = 'Solo con CURP (sin RFC)';
+            }
+
+            const mensaje = encodeURIComponent(
+                `*📝 NUEVA SOLICITUD - CSF BAJALOYA*\n\n` +
+                `*Fecha:* ${fecha}\n\n` +
+                `*📋 Tipo de trámite:* ${tipoTramite}\n\n` +
+                `*📋 Datos del solicitante:*\n` +
+                datosCliente + `\n\n` +
+                `*💰 Servicio:* Constancia de Situación Fiscal\n` +
+                `*💵 Precio:* $${precioActual} MXN\n\n` +
+                `Por favor confirmar recepción y pasos para el pago. ¡Gracias! 🙏`
+            );
+
+            setTimeout(() => {
+                const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${mensaje}`;
+
+                // Actualizar botón ANTES de redirigir
+                btnSpinner.style.display = 'none';
+                btnIcon.style.display = 'inline';
+                btnText.innerText = '✅ ¡SOLICITUD ENVIADA!';
+                submitBtn.style.background = 'linear-gradient(135deg, #2ecc71, #27ae60)';
+
+                setTimeout(() => {
+                    window.location.href = whatsappUrl;
+                    setTimeout(() => {
+                        btnText.innerText = 'ENVIAR POR WHATSAPP';
+                        submitBtn.style.background = '';
+                        submitBtn.disabled = false;
+                    }, 3000);
+                }, 600);
+            }, 800);
+        }
+    </script>
+</body>
+</html>
